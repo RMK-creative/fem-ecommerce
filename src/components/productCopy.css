@@ -1,0 +1,40 @@
+h1 {
+  font-size: 13px;
+  color: #ff7e1b;
+}
+h2 {
+  font-size: 44px;
+}
+
+.product__copy {
+  padding: 3rem 0;
+  max-width: 30rem;
+  font-family: "Kumbh Sans", sans-serif;
+  margin-left: 7rem;
+}
+
+.product__heading-main {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.product__description {
+  color: #69707d;
+}
+
+.product__price {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.product__price span {
+  font-size: 16px;
+  padding: 5px 8px;
+  color: #ff7e1b;
+  background-color: #ffeee2;
+  border-radius: 10px;
+}
+
+.button__container {
+  display: flex;
+}

@@ -1,0 +1,12 @@
+.cartAlert {
+  width: 19px;
+  height: 13px;
+  background-color: #ff7e1b;
+  color: #ffffff;
+  font-size: 10px;
+  position: absolute;
+  top: 3rem;
+  right: 12.5rem;
+  border: none;
+  border-radius: 20px;
+}

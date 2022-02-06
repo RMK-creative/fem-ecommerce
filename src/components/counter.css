@@ -1,0 +1,21 @@
+.counter__container {
+  background-color: #f6f8fd;
+  border-radius: 10px;
+  min-width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.counter__icon {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: #ff7e1b;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}

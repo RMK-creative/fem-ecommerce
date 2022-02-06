@@ -1,0 +1,18 @@
+.product__images--container {
+  max-width: 445px;
+}
+
+.product__image--main {
+  max-width: 445px;
+  margin-bottom: 32px;
+  border-radius: 20px;
+}
+
+.product__image__thumb--container {
+  display: flex;
+  justify-content: space-between;
+}
+.product__image__thumb--container img {
+  max-width: 88px;
+  border-radius: 10px;
+}

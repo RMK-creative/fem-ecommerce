@@ -1,23 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navigation from "./components/Navigation";
+import ProductImages from "./components/ProductImages";
+import ProductCopy from "./components/ProductCopy";
+import CartModal from "./components/CartModal";
+import CartAlert from "./components/CartAlert";
+import { useState } from "react";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+  const [cartModalisOpen, setCartModalIsOpen] = useState(false);
+  const [itemsInCart, setItemsInCart] = useState(false);
+  const [itemPrice, setItemPrice] = useState(250);
+  const [itemDiscountPrice, setItemDiscountPrice] = useState(125);
+
+  function handleCounterPlusClick() {
+    setCounter(counter + 1);
+  }
+
+  function handleCounterMinusClick() {
+    counter > 0 ? setCounter(counter - 1) : setCounter(0);
+  }
+
+  function handleAddToCart() {
+    setItemsInCart(true);
+  }
+
+  function handleToggleCartModal() {
+    cartModalisOpen ? setCartModalIsOpen(false) : setCartModalIsOpen(true);
+  }
+
+  function handleDeleteCart() {
+    setItemsInCart(0);
+    setCounter(0);
+  }
+
+  function handleCheckoutCart() {
+    console.log("checkout");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation
+        cartModalisOpen={cartModalisOpen}
+        toggleCartModal={handleToggleCartModal}
+      />
+      <main>
+        <section>
+          <ProductImages />
+        </section>
+        <section>
+          <ProductCopy
+            itemDiscountPrice={itemDiscountPrice}
+            itemPrice={itemPrice}
+            addToCart={handleAddToCart}
+            clickMinus={handleCounterMinusClick}
+            clickPlus={handleCounterPlusClick}
+            counter={counter}
+          />
+        </section>
+
+        {counter > 0 && itemsInCart == true ? (
+          <CartAlert counter={counter} />
+        ) : null}
+        {cartModalisOpen ? (
+          <CartModal
+            counter={counter}
+            deleteCart={handleDeleteCart}
+            itemsInCart={itemsInCart}
+            itemPrice={itemPrice}
+            itemDiscountPrice={itemDiscountPrice}
+            checkoutCart={handleCheckoutCart}
+          />
+        ) : null}
+      </main>
     </div>
   );
 }

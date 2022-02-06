@@ -1,0 +1,11 @@
+.button {
+  border: none;
+  border-radius: 10px;
+  background-color: #ff7e1b;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 1rem 3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
