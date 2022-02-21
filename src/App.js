@@ -22,7 +22,7 @@ function App() {
   }
 
   function handleAddToCart() {
-    setItemsInCart(true);
+    if (counter > 0) setItemsInCart(true);
   }
 
   function handleToggleCartModal() {
@@ -30,12 +30,13 @@ function App() {
   }
 
   function handleDeleteCart() {
-    setItemsInCart(0);
+    setItemsInCart(false);
     setCounter(0);
   }
 
   function handleCheckoutCart() {
-    console.log("checkout");
+    setItemsInCart(false);
+    setCounter(0);
   }
 
   return (
